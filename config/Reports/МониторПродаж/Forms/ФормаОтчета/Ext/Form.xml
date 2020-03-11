@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<CommandBarLocation>None</CommandBarLocation>
+	<ReportFormType>Main</ReportFormType>
+	<AutoShowState>Auto</AutoShowState>
+	<ReportResultViewMode>Auto</ReportResultViewMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="ГруппаСтраницы" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="35"/>
+			<ChildItems>
+				<Page name="Конверсия" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конверсия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Конверсия</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="КонверсияРасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<UsualGroup name="ПараметрыОтчета" id="3">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры отчета</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Параметры отчета</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="ПараметрыОтчетаРасширеннаяПодсказка" id="4"/>
+							<ChildItems>
+								<InputField name="ПериодОтчета" id="5">
+									<DataPath>ПериодОтчета</DataPath>
+									<ContextMenu name="ПериодОтчетаКонтекстноеМеню" id="6"/>
+									<ExtendedTooltip name="ПериодОтчетаРасширеннаяПодсказка" id="7"/>
+								</InputField>
+								<RadioButtonField name="ВидОтчета" id="26">
+									<DataPath>ВидОтчета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Показывать данные </v8:content>
+										</v8:item>
+									</Title>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>по дням</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">0</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>по часам</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВидОтчетаКонтекстноеМеню" id="27"/>
+									<ExtendedTooltip name="ВидОтчетаРасширеннаяПодсказка" id="28"/>
+								</RadioButtonField>
+								<InputField name="Магазин" id="23">
+									<DataPath>Магазин</DataPath>
+									<ContextMenu name="МагазинКонтекстноеМеню" id="24"/>
+									<ExtendedTooltip name="МагазинРасширеннаяПодсказка" id="25"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Сформировать" id="11">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сформировать</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="СформироватьРасширеннаяПодсказка" id="12"/>
+						</UsualGroup>
+						<UsualGroup name="РезультатыОтчета" id="13">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результаты отчета</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результаты отчета</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="РезультатыОтчетаРасширеннаяПодсказка" id="14"/>
+							<ChildItems>
+								<CommandBar name="КоманднаяПанельРезОтчета" id="21">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Командная панель рез отчета</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Командная панель рез отчета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<CommandSource>Item.РезультатОтчета</CommandSource>
+									<ExtendedTooltip name="КоманднаяПанельРезОтчетаРасширеннаяПодсказка" id="22"/>
+									<ChildItems>
+										<Button name="ФормаСформироватьОтчет" id="1">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.СформироватьОтчет</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сформировать конверсию</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ФормаСформироватьОтчетРасширеннаяПодсказка" id="2"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+								<UsualGroup name="ГруппаРезультатов" id="32">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа результатов</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа результатов</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаРезультатовРасширеннаяПодсказка" id="33"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="РезультатОтчета" id="15">
+											<DataPath>РезультатОтчета</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Height>30</Height>
+											<VerticalScrollBar>true</VerticalScrollBar>
+											<HorizontalScrollBar>true</HorizontalScrollBar>
+											<ViewScalingMode>Normal</ViewScalingMode>
+											<ContextMenu name="РезультатОтчетаКонтекстноеМеню" id="16"/>
+											<ExtendedTooltip name="РезультатОтчетаРасширеннаяПодсказка" id="17"/>
+										</SpreadSheetDocumentField>
+										<SpreadSheetDocumentField name="ДиаграммаПоЧекам" id="29">
+											<DataPath>РезОтчета</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Height>30</Height>
+											<VerticalScrollBar>true</VerticalScrollBar>
+											<HorizontalScrollBar>true</HorizontalScrollBar>
+											<ContextMenu name="ДиаграммаПоЧекамКонтекстноеМеню" id="30"/>
+											<ExtendedTooltip name="ДиаграммаПоЧекамРасширеннаяПодсказка" id="31"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ПланФактПоКЗ" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текущий план-факт по консультационным зонам</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>План факт по КЗ</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПланФактПоКЗРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<UsualGroup name="КоманднаяПанельКЗ" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель КЗ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель КЗ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КоманднаяПанельКЗРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<Button name="СформироватьПланФактКЗ" id="45">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СформироватьПланФактКЗ</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сформировать план-факт по консультационным зонам</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="СформироватьПланФактКЗРасширеннаяПодсказка" id="46"/>
+								</Button>
+								<InputField name="МагазинДляКз" id="42">
+									<DataPath>Магазин</DataPath>
+									<ContextMenu name="МагазинДляКзКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="МагазинДляКзРасширеннаяПодсказка" id="44"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="РезультатОтчетаПланФактКз" id="47">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результат отчета план факт по консультационным зонам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результат отчета план факт кз</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="РезультатОтчетаПланФактКзРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<SpreadSheetDocumentField name="РезультатОтчетаПоПланФактКз" id="49">
+									<DataPath>РезультатОтчетаПоПланФактКз</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="РезультатОтчетаПоПланФактКзКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="РезультатОтчетаПоПланФактКзРасширеннаяПодсказка" id="51"/>
+								</SpreadSheetDocumentField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ПовременнаяДинамикаПродаж" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повременная динамика продаж</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Повременная динамика продаж</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПовременнаяДинамикаПродажРасширеннаяПодсказка" id="53"/>
+					<ChildItems>
+						<UsualGroup name="ШапкаДинамикиПродаж" id="59">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шапка динамики продаж</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ШапкаДинамикиПродажРасширеннаяПодсказка" id="60"/>
+							<ChildItems>
+								<Button name="СформироватьДинамикуПродаж" id="54">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СформироватьДинамикуПродаж</CommandName>
+									<ExtendedTooltip name="СформироватьДинамикуПродажРасширеннаяПодсказка" id="55"/>
+								</Button>
+								<InputField name="ПериодОтчетаДинамики" id="100">
+									<DataPath>ПериодОтчета</DataPath>
+									<ContextMenu name="ПериодОтчетаДинамикиКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="ПериодОтчетаДинамикиРасширеннаяПодсказка" id="102"/>
+								</InputField>
+								<InputField name="МагазинДляДинамики" id="56">
+									<DataPath>Магазин</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Магазин</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="МагазинДляДинамикиКонтекстноеМеню" id="57"/>
+									<ExtendedTooltip name="МагазинДляДинамикиРасширеннаяПодсказка" id="58"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Pages name="ЗакладкиДинамики" id="61">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Закладки динамики</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Закладки динамики</v8:content>
+								</v8:item>
+							</ToolTip>
+							<PagesRepresentation>TabsOnLeftHorizontal</PagesRepresentation>
+							<ExtendedTooltip name="ЗакладкиДинамикиРасширеннаяПодсказка" id="62"/>
+							<ChildItems>
+								<Page name="ДинамикаВыручки" id="63">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика выручки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика выручки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ДинамикаВыручкиРасширеннаяПодсказка" id="64"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="РезультатДинамикиВыручки" id="69">
+											<DataPath>РезультатДинамикиВыручки</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="РезультатДинамикиВыручкиКонтекстноеМеню" id="70"/>
+											<ExtendedTooltip name="РезультатДинамикиВыручкиРасширеннаяПодсказка" id="71"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="ДинамикаПосетителей" id="65">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика посетителей</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика посетителей</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ДинамикаПосетителейРасширеннаяПодсказка" id="66"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="РезультатДинамикиПосетителей" id="72">
+											<DataPath>РезультатДинамикиПосетителей</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="РезультатДинамикиПосетителейКонтекстноеМеню" id="73"/>
+											<ExtendedTooltip name="РезультатДинамикиПосетителейРасширеннаяПодсказка" id="74"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="ДинамикаСреднегоЧека" id="67">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика среднего чека</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика среднего чека</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ДинамикаСреднегоЧекаРасширеннаяПодсказка" id="68"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="РезультатДинамикиСреднегоЧека" id="75">
+											<DataPath>РезультатДинамикиСреднегоЧека</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="РезультатДинамикиСреднегоЧекаКонтекстноеМеню" id="76"/>
+											<ExtendedTooltip name="РезультатДинамикиСреднегоЧекаРасширеннаяПодсказка" id="77"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+								<Page name="ДинамикаКоличестваЧеков" id="78">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика количества чеков</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Динамика количества чеков</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ДинамикаКоличестваЧековРасширеннаяПодсказка" id="79"/>
+									<ChildItems>
+										<SpreadSheetDocumentField name="РезультатДинамикиКоличестваЧеков" id="80">
+											<DataPath>РезультатДинамикиКоличестваЧеков</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<ContextMenu name="РезультатДинамикиКоличестваЧековКонтекстноеМеню" id="81"/>
+											<ExtendedTooltip name="РезультатДинамикиКоличестваЧековРасширеннаяПодсказка" id="82"/>
+										</SpreadSheetDocumentField>
+									</ChildItems>
+								</Page>
+							</ChildItems>
+						</Pages>
+					</ChildItems>
+				</Page>
+				<Page name="БонусныеКарты" id="83">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статистика регистрации бонусных карт</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бонусные карты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="БонусныеКартыРасширеннаяПодсказка" id="84"/>
+					<ChildItems>
+						<UsualGroup name="КоманднаяПанельБК" id="87">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель БК</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Командная панель БК</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="КоманднаяПанельБКРасширеннаяПодсказка" id="88"/>
+							<ChildItems>
+								<Button name="СформироватьОтчетБК" id="85">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СформироватьОтчетБК</CommandName>
+									<ExtendedTooltip name="СформироватьОтчетБКРасширеннаяПодсказка" id="86"/>
+								</Button>
+								<InputField name="ПериодОтчетаБК" id="92">
+									<DataPath>ПериодОтчета</DataPath>
+									<ContextMenu name="ПериодОтчетаБККонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="ПериодОтчетаБКРасширеннаяПодсказка" id="94"/>
+								</InputField>
+								<InputField name="МагазинДляБк" id="89">
+									<DataPath>Магазин</DataPath>
+									<ContextMenu name="МагазинДляБкКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="МагазинДляБкРасширеннаяПодсказка" id="91"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="РезОтчетаПоБК" id="98">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рез отчета по БК</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рез отчета по БК</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="РезОтчетаПоБКРасширеннаяПодсказка" id="99"/>
+							<ChildItems>
+								<SpreadSheetDocumentField name="РезОтчетаБК" id="95">
+									<DataPath>РезОтчетаБК</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="РезОтчетаБККонтекстноеМеню" id="96"/>
+									<ExtendedTooltip name="РезОтчетаБКРасширеннаяПодсказка" id="97"/>
+								</SpreadSheetDocumentField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Отчет" id="1">
+			<Type>
+				<v8:Type>cfg:ReportObject.МониторПродаж</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПериодОтчета" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатОтчета" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Магазин" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Магазин</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Подразделения</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидОтчета" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РезОтчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рез отчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатОтчетаПоПланФактКз" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат отчета по план факт кз</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатДинамикиВыручки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат динамики выручки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатДинамикиПосетителей" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат динамики посетителей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатДинамикиСреднегоЧека" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат динамики среднего чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезультатДинамикиКоличестваЧеков" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат динамики количества чеков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РезОтчетаБК" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рез отчета БК</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьОтчет" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОтчет</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьПланФактКЗ" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать план факт КЗ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать план факт КЗ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьПланФактКЗ</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьДинамикуПродаж" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать динамику продаж</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать динамику продаж</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьДинамикуПродаж</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СформироватьОтчетБК" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет БК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать отчет БК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОтчетБК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

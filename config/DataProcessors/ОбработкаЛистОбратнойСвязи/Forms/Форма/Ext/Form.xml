@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСохранитьВДокумент" id="7">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СохранитьВДокумент</CommandName>
+				<Font ref="sys:DefaultGUIFont" height="7" kind="WindowsFont"/>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сохранить документ</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаСохранитьВДокументРасширеннаяПодсказка" id="8"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ВыбДокПроверки" id="1">
+			<DataPath>Объект.ВыбДокПроверки</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<DropListButton>false</DropListButton>
+			<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+			<OpenButton>false</OpenButton>
+			<CreateButton>false</CreateButton>
+			<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+			<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+			<ContextMenu name="ВыбДокПроверкиКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВыбДокПроверкиРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="StartChoice">ВыбДокПроверкиНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ШапкаДокумента" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка документа</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка документа</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаДокументаРасширеннаяПодсказка" id="10"/>
+			<ChildItems>
+				<UsualGroup name="Группа2" id="11">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="12"/>
+					<ChildItems>
+						<InputField name="ДатаПроверки" id="15">
+							<DataPath>Объект.ДатаПроверки</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="ДатаПроверкиКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ДатаПроверкиРасширеннаяПодсказка" id="17"/>
+						</InputField>
+						<InputField name="Город" id="18">
+							<DataPath>Объект.Город</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="ГородКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="ГородРасширеннаяПодсказка" id="20"/>
+							<Events>
+								<Event name="OnChange">ГородПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Подразделение" id="21">
+							<DataPath>Объект.Подразделение</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="ПодразделениеКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ПодразделениеРасширеннаяПодсказка" id="23"/>
+							<Events>
+								<Event name="OnChange">ПодразделениеПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа3" id="13">
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<InputField name="Управляющий" id="24">
+							<DataPath>Объект.Управляющий</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="УправляющийКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="УправляющийРасширеннаяПодсказка" id="26"/>
+							<Events>
+								<Event name="OnChange">УправляющийПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="РД" id="27">
+							<DataPath>Объект.РД</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="РДКонтекстноеМеню" id="28"/>
+							<ExtendedTooltip name="РДРасширеннаяПодсказка" id="29"/>
+							<Events>
+								<Event name="OnChange">РДПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="НД" id="30">
+							<DataPath>Объект.НД</DataPath>
+							<DropListButton>false</DropListButton>
+							<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+							<OpenButton>false</OpenButton>
+							<Font ref="sys:DefaultGUIFont" height="8" kind="WindowsFont"/>
+							<ContextMenu name="НДКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="НДРасширеннаяПодсказка" id="32"/>
+							<Events>
+								<Event name="OnChange">НДПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="ПоказатьШапку" id="33">
+			<DataPath>ПоказатьШапку</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<CheckBoxType>Tumbler</CheckBoxType>
+			<EditFormat>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛ='Скрыть шапку'; БИ='Показать шапку'</v8:content>
+				</v8:item>
+			</EditFormat>
+			<ContextMenu name="ПоказатьШапкуКонтекстноеМеню" id="34"/>
+			<ExtendedTooltip name="ПоказатьШапкуРасширеннаяПодсказка" id="35"/>
+			<Events>
+				<Event name="OnChange">ПоказатьШапкуПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<SpreadSheetDocumentField name="ТаблДок" id="4">
+			<DataPath>Объект.ТабДок</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<Width>52</Width>
+			<VerticalScrollBar>true</VerticalScrollBar>
+			<HorizontalScrollBar>true</HorizontalScrollBar>
+			<ContextMenu name="ТаблДокКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ТаблДокРасширеннаяПодсказка" id="6"/>
+			<Events>
+				<Event name="OnChange">ТаблДокПриИзменении</Event>
+				<Event name="Selection">ТаблДокВыбор</Event>
+			</Events>
+		</SpreadSheetDocumentField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ОбработкаЛистОбратнойСвязи</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КолвоКритериев" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Колво критериев</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>3</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказатьШапку" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать шапку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьДанныеВХранилище" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть данные в хранилище</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СохранитьВДокумент" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить в документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьВДокумент</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

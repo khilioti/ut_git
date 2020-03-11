@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Наименование" id="4">
+			<DataPath>Объект.Description</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаФункциональныеПризнаки" id="58">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Функции</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа функциональные признаки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<ExtendedTooltip name="ГруппаФункциональныеПризнакиРасширеннаяПодсказка" id="59"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаФункциональныеПризнакиЛевая" id="60">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа функциональные признаки левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа функциональные признаки левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаФункциональныеПризнакиЛеваяРасширеннаяПодсказка" id="61"/>
+					<ChildItems>
+						<CheckBoxField name="РегиональныйДиректор" id="41">
+							<DataPath>Объект.РегиональныйДиректор</DataPath>
+							<CheckBoxType>CheckBox</CheckBoxType>
+							<ContextMenu name="РегиональныйДиректорКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="РегиональныйДиректорРасширеннаяПодсказка" id="43"/>
+						</CheckBoxField>
+						<CheckBoxField name="ДепартаментПерсонала" id="44">
+							<DataPath>Объект.ДепартаментПерсонала</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДепартаментПерсоналаКонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="ДепартаментПерсоналаРасширеннаяПодсказка" id="46"/>
+						</CheckBoxField>
+						<CheckBoxField name="ДепартаментАудитаИКонтроля" id="53">
+							<DataPath>Объект.ДепартаментАудитаИКонтроля</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДепартаментАудитаИКонтроляКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ДепартаментАудитаИКонтроляРасширеннаяПодсказка" id="55"/>
+						</CheckBoxField>
+						<CheckBoxField name="Директор" id="47">
+							<DataPath>Объект.Директор</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДиректорКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ДиректорРасширеннаяПодсказка" id="49"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаФункциональныеПравая" id="56">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа функциональные правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа функциональные правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаФункциональныеПраваяРасширеннаяПодсказка" id="57"/>
+					<ChildItems>
+						<CheckBoxField name="УправляющиеМагазинами" id="50">
+							<DataPath>Объект.УправляющиеМагазинами</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УправляющиеМагазинамиКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="УправляющиеМагазинамиРасширеннаяПодсказка" id="52"/>
+						</CheckBoxField>
+						<CheckBoxField name="НациональныйДиректор" id="62">
+							<DataPath>Объект.НациональныйДиректор</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НациональныйДиректорКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="НациональныйДиректорРасширеннаяПодсказка" id="64"/>
+						</CheckBoxField>
+						<CheckBoxField name="ОтделОперационногоКонтроля" id="65">
+							<DataPath>Объект.ОтделОперационногоКонтроля</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ОтделОперационногоКонтроляКонтекстноеМеню" id="66"/>
+							<ExtendedTooltip name="ОтделОперационногоКонтроляРасширеннаяПодсказка" id="67"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.Должности</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

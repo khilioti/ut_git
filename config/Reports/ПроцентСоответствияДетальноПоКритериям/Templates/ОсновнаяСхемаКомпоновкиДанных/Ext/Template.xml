@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Кво</dataPath>
+			<field>Кво</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>%</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МаксКво</dataPath>
+			<field>МаксКво</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс кво</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПроверки</dataPath>
+			<field>ДатаПроверки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата проверки</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Формат(ДатаПроверки,"ДЛФ=Д")</presentationExpression>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Управляющий</dataPath>
+			<field>Управляющий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Критерий</dataPath>
+			<field>Критерий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Критерий</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>Критерий.ПолнНаименование</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Город</dataPath>
+			<field>Город</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегионДиректор</dataPath>
+			<field>РегионДиректор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Магазин</dataPath>
+			<field>Магазин</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Магазин</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ФункцииСКД.МагазинКратко(Магазин)</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НацДиректор</dataPath>
+			<field>НацДиректор</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Общий.Город,
+	Общий.Магазин,
+	Общий.НацДиректор,
+	Общий.РегионДиректор,
+	Общий.Управляющий,
+	Общий.ДатаПроверки,
+	Общий.Критерий,
+	Общий.Кво,
+	Общий.МаксКво
+ИЗ
+	(ВЫБРАТЬ
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Город КАК Город,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Подразделение КАК Магазин,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.НацДиректор КАК НацДиректор,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.РегионДиректор КАК РегионДиректор,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Управляющий КАК Управляющий,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Дата КАК ДатаПроверки,
+		ЛистОбратнойСвязиHRРезультаты.Критерий КАК Критерий,
+		ЛистОбратнойСвязиHRРезультаты.Кво КАК Кво,
+		1 КАК МаксКво
+	ИЗ
+		Документ.ЛистОбратнойСвязиHR.Результаты КАК ЛистОбратнойСвязиHRРезультаты
+	ГДЕ
+		&amp;ТипДокумента = 1
+		И ЛистОбратнойСвязиHRРезультаты.Ссылка.Дата МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+		И ЛистОбратнойСвязиHRРезультаты.Критерий.ПометкаУдаления = ЛОЖЬ
+		И ЛистОбратнойСвязиHRРезультаты.Ссылка.Проведен = ИСТИНА
+	
+	СГРУППИРОВАТЬ ПО
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Управляющий,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Дата,
+		ЛистОбратнойСвязиHRРезультаты.Критерий,
+		ЛистОбратнойСвязиHRРезультаты.Кво,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Подразделение,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.НацДиректор,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.РегионДиректор,
+		ЛистОбратнойСвязиHRРезультаты.Ссылка.Город
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Город,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Подразделение,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.НацДиректор,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.РегионДиректор,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Управляющий,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Дата,
+		РезультатыПроверкиМагазинаРДРезультаты.Критерий,
+		РезультатыПроверкиМагазинаРДРезультаты.Кво,
+		1
+	ИЗ
+		Документ.РезультатыПроверкиМагазинаРД.Результаты КАК РезультатыПроверкиМагазинаРДРезультаты
+	ГДЕ
+		&amp;ТипДокумента = 2
+		И РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Дата МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+		И РезультатыПроверкиМагазинаРДРезультаты.Критерий.ПометкаУдаления = ЛОЖЬ
+		И РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Проведен = ИСТИНА
+	
+	СГРУППИРОВАТЬ ПО
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Управляющий,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Дата,
+		РезультатыПроверкиМагазинаРДРезультаты.Критерий,
+		РезультатыПроверкиМагазинаРДРезультаты.Кво,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Подразделение,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.НацДиректор,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.РегионДиректор,
+		РезультатыПроверкиМагазинаРДРезультаты.Ссылка.Город
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Город,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Подразделение,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.НацДиректор,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.РегионДиректор,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Управляющий,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Дата,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Критерий,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Кво,
+		1
+	ИЗ
+		Документ.РезультатыПроверкиМагазинаДАиК.Результаты КАК РезультатыПроверкиМагазинаДАиКРезультаты
+	ГДЕ
+		&amp;ТипДокумента = 3
+		И РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Дата МЕЖДУ &amp;ДатаНачало И &amp;ДатаКонец
+		И РезультатыПроверкиМагазинаДАиКРезультаты.Критерий.ПометкаУдаления = ЛОЖЬ
+		И РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Проведен = ИСТИНА
+	
+	СГРУППИРОВАТЬ ПО
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Управляющий,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Дата,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Критерий,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Кво,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Подразделение,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.НацДиректор,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.РегионДиректор,
+		РезультатыПроверкиМагазинаДАиКРезультаты.Ссылка.Город) КАК Общий</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Кво</dataPath>
+		<expression>ФункцииСКД.ПроцентВыполнения(Сумма(кво),Сумма(МаксКво))</expression>
+		<group>Критерий Иерархия</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>Кво</dataPath>
+		<expression>ФункцииСКД.ПроцентВыполненияЧисло(Сумма(кво),Сумма(МаксКво),Количество(кво))</expression>
+		<group>Критерий</group>
+	</totalField>
+	<parameter>
+		<name>ДатаКонец</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата конец</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ДатаНачало</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начало</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ТипДокумента</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тип документа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>0</v8:Digits>
+				<v8:FractionDigits>0</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+		<value xsi:type="xs:decimal">0</value>
+		<useRestriction>false</useRestriction>
+		<availableValue>
+			<value xsi:type="xs:decimal">1</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверки HR</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">2</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверки РД</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<availableValue>
+			<value xsi:type="xs:decimal">3</value>
+			<presentation xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверки ДАиК</v8:content>
+				</v8:item>
+			</presentation>
+		</availableValue>
+		<denyIncompleteValues>true</denyIncompleteValues>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Кво</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Город</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>b789521c-eeae-4e59-8dd3-a119254ce7f9</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">НацДиректор</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>2fbecf54-841c-4354-95f2-a37619bebfb3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">РегионДиректор</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>adef1829-045f-4d44-85ba-ec0eb6205cd1</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Управляющий</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>f099e31a-3333-430e-a146-20ae6c1dbfad</dcsset:userSettingID>
+					<dcsset:userSettingPresentation xsi:type="xs:string">Управляющий</dcsset:userSettingPresentation>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Магазин</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>5ea4446a-ba37-41e7-80fd-5db01e588cde</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Критерий</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:userSettingID>ddf9481f-e577-4b31-94bf-4aa997a8de65</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипДокумента</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">1</dcscor:value>
+					<dcsset:userSettingID>5f1832a6-f39d-4e9f-b5cc-71e91a643034</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>699ebc0e-888a-4d89-ba05-9bdca19d067c</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Критерий.НомерПоПорядку</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Begin</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Магазин</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionGroupPlacement">None</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+							<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:use>false</dcscor:use>
+							<dcscor:parameter>Заголовок</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>1245</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ДатаПроверки</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:use>false</dcscor:use>
+								<dcscor:parameter>Заголовок</dcscor:parameter>
+								<dcscor:value xsi:type="v8:LocalStringType">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>123</v8:content>
+									</v8:item>
+								</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+					</dcsset:item>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Критерий</dcsset:field>
+							<dcsset:groupType>Hierarchy</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

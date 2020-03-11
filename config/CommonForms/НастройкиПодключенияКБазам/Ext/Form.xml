@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<UsualGroup name="Настройки1с8" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки1с8</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки1с8</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="Настройки1с8РасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<InputField name="Сервер1с8" id="4">
+					<DataPath>НаборКонстант.Сервер1с8</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя сервера 1с8 для городов и магазинов</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Сервер1с8КонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="Сервер1с8РасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="ИмяБазы1с8" id="7">
+					<DataPath>НаборКонстант.ИмяБазы1с8</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя баз 1с8 для городов и магазинов</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ИмяБазы1с8КонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ИмяБазы1с8РасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="Пользователь1с8" id="16">
+					<DataPath>НаборКонстант.Пользователь1с8</DataPath>
+					<ContextMenu name="Пользователь1с8КонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="Пользователь1с8РасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="Пароль1с8" id="19">
+					<DataPath>НаборКонстант.Пароль1с8</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="Пароль1с8КонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="Пароль1с8РасширеннаяПодсказка" id="21"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>НаборКонстант.ИмяБазы1с8</Field>
+				<Field>НаборКонстант.Пароль1с8</Field>
+				<Field>НаборКонстант.Пользователь1с8</Field>
+				<Field>НаборКонстант.Сервер1с8</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>

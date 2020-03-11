@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CommandInterface xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<CommandsVisibility>
+		<Command name="Task.ЗадачаИсполнителя.Command.ВсеЗадачи">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="Document.ЛистОбратнойСвязиHR.StandardCommand.OpenList">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="Task.ЗадачаИсполнителя.Command.МоиЗадачи">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="Document.РезультатыПроверкиМагазинаРД.StandardCommand.OpenList">
+			<Visibility>
+				<xr:Common>false</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="Document.ЛистОбратнойСвязиHR.StandardCommand.Create">
+			<Visibility>
+				<xr:Common>true</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="Document.РезультатыПроверкиМагазинаРД.StandardCommand.Create">
+			<Visibility>
+				<xr:Common>true</xr:Common>
+			</Visibility>
+		</Command>
+		<Command name="DataProcessor.ОбработкаЛистОбратнойСвязи.StandardCommand.Open">
+			<Visibility>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.РД">true</xr:Value>
+			</Visibility>
+		</Command>
+		<Command name="DataProcessor.ОбработкаЛистаПроверкиРД.StandardCommand.Open">
+			<Visibility>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.РД">true</xr:Value>
+			</Visibility>
+		</Command>
+	</CommandsVisibility>
+	<SubsystemsOrder>
+		<Subsystem>Subsystem.УчетПроверок.Subsystem.Документы</Subsystem>
+		<Subsystem>Subsystem.УчетПроверок.Subsystem.Задачи</Subsystem>
+		<Subsystem>Subsystem.УчетПроверок.Subsystem.Обработки</Subsystem>
+		<Subsystem>Subsystem.УчетПроверок.Subsystem.Справочники</Subsystem>
+	</SubsystemsOrder>
+</CommandInterface>
